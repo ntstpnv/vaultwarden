@@ -14,6 +14,4 @@ fi\n\
 export ROCKET_TLS="{certs=\\"/data/fullchain.pem\\",key=\\"/data/privkey.pem\\"}"\n\
 exec /start.sh' > /entrypoint.sh && chmod +x /entrypoint.sh
 
-USER vaultwarden
-
 ENTRYPOINT ["/entrypoint.sh"]
