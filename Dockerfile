@@ -12,6 +12,7 @@ if [ ! -f /data/fullchain.pem ] || [ ! -f /data/privkey.pem ]; then\n\
         -subj "/CN=vaultwarden.local"\n\
 fi\n\
 export ROCKET_TLS="{certs=\\"/data/fullchain.pem\\",key=\\"/data/privkey.pem\\"}"\n\
+export ROCKET_PORT=443\n\
 exec /start.sh' > /entrypoint.sh && chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
